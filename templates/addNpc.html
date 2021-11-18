@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="mainContainer" style="position: relative; text-align: center;">
+        <div id="confirmationPage" style="position: absolute; z-index: 10; width: 90%; background-color: rgba(185, 185, 185, 0.95); margin: 5%; visibility: hidden;">
+            <h2  style="text-decoration: underline;" id="nameConfirmation">Grach Dahl</h2>
+            <h3>in</h3>
+            <h2 style="text-decoration: underline;" id="cityConfirmation">Between Taffield and Sirisea</h2>
+            <h3>known for</h3>
+            <div style="padding-left: 10vw; padding-right: 10vw;">
+                <p id="descriptionConfirmation">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam officia cum aut sed, fugit aspernatur! Quasi magni accusamus natus nostrum, error itaque ratione numquam voluptatem repellendus exercitationem modi eum quia. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente obcaecati non optio! Deserunt unde iste consequuntur voluptas? Illo, natus, asperiores facere maiores facilis, debitis voluptas quibusdam ut reiciendis consequatur iure.</p>
+            </div>
+            <div style="display: flex; justify-content: space-evenly; padding-bottom: 1%;">
+                <input type="button" value="Cancel" style="padding: 1%;" onclick="sampleFunc()"><input type="button" value="Save Character" style="padding: 1%;">
+            </div>
+        </div>
+        <a href="/" style="text-align: left;">back</a>
+        <h1>Add NPC here</h1>
+        <form action="/addnpc" method="get">
+            <label for="name"></label>
+            <input type="text" placeholder="Add the NPC's name here" id="nameForm" name="name" autocomplete="off"><br>
+
+            <label for="city"></label>
+            <input type="text" placeholder="Add a city" id="cityForm" name="city" autocomplete="off"><br>
+
+            <label for="description"></label>
+            <textarea name="description" id="descriptionForm" cols="30" rows="10"></textarea><br>
+            <label for="submitbutton"></label>
+            <button type="button" onclick="sampleFunc()" style="padding: 20px;"> submit new NPC </button>
+        </form>    
+    </div>
+</body>
+<script>
+    function sampleFunc(){
+        var isVisible = document.getElementById('confirmationPage').style.visibility
+        console.log(isVisible)
+        if (isVisible == 'visible'){
+            document.getElementById('confirmationPage').style.visibility = 'hidden'
+
+        }else{
+            document.getElementById('nameConfirmation').innerHTML = document.getElementById('nameForm').value
+            document.getElementById('cityConfirmation').innerHTML = document.getElementById('cityForm').value
+            document.getElementById('descriptionConfirmation').innerHTML = document.getElementById('descriptionForm').value
+            document.getElementById('confirmationPage').style.visibility =  'visible'
+        }
+    }
+</script>
+</html>

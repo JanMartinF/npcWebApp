@@ -1,0 +1,14 @@
+@import url(sanitize.css);
+h1{
+    color: tomato;
+}
+button{
+    width: 100%;
+}
+td{
+    padding: 5px;
+    border: 2px solid tomato;
+}
+.headerTr{
+    font-weight: bold;
+}
